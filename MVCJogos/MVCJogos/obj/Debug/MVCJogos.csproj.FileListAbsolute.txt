@@ -1,0 +1,10 @@
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\bin\Debug\MVCJogos.exe.config
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\bin\Debug\MVCJogos.exe
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\bin\Debug\MVCJogos.pdb
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.csproj.AssemblyReference.cache
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.Form1.resources
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.Properties.Resources.resources
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.csproj.GenerateResource.cache
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.csproj.CoreCompileInputs.cache
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.exe
+C:\Users\lucas\repo\.git\Modelo-MVC\MVCJogos\MVCJogos\obj\Debug\MVCJogos.pdb

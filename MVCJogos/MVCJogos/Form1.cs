@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVCJogos.DAO;
+using MVCJogos.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,5 +23,63 @@ namespace MVCJogos
         {
 
         }
+
+        public void validacao(JogoViewModel jogo)
+        {
+            if (jogo.id <= 0)
+            {
+                throw new Exception("Id menor que 0");
+
+            }
+            if(jogo.valorLocacao < 0)
+            {
+                throw new Exception("Preço invalido");
+
+            }
+
+            if (jogo.dataAquicicao > DateTime.Now)
+            {
+                throw new Exception("Data de aquicição invalida");
+            }
+
+            if (jogo.idCategoria <= 0)
+            {
+                throw new Exception("Codigo de Categoria invalida");
+            }
+
+            if (string.IsNullOrEmpty(jogo.descricao))
+            {
+                throw new Exception("Descrição invalida");
+            }
+        }
+
+        private void btnAd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JogoViewModel jogo = PreencherDados();
+                validacao(jogo);
+                JogoDAO jogoDAO = new JogoDAO();
+                jogoDAO.Inserir(jogo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private JogoViewModel PreencherDados()
+        {
+            JogoViewModel jogo = new JogoViewModel();
+            jogo.id = int.Parse(boxId.Text);
+            jogo.idCategoria = int.Parse(boxCat.Text);
+            jogo.descricao = boxDesc.Text;
+            jogo.dataAquicicao = DateTime.Parse(boxData.Text);
+            jogo.valorLocacao = float.Parse(boxValor.Text);
+            return jogo;
+        }
+
+      
     }
+
 }

@@ -38,9 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAd = new System.Windows.Forms.Button();
+            this.btnAlt = new System.Windows.Forms.Button();
+            this.btnEx = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // boxId
@@ -123,41 +123,42 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Id de Categoria";
             // 
-            // button1
+            // btnAd
             // 
-            this.button1.Location = new System.Drawing.Point(379, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAd.Location = new System.Drawing.Point(379, 54);
+            this.btnAd.Name = "btnAd";
+            this.btnAd.Size = new System.Drawing.Size(75, 23);
+            this.btnAd.TabIndex = 10;
+            this.btnAd.Text = "Adicionar";
+            this.btnAd.UseVisualStyleBackColor = true;
+            this.btnAd.Click += new System.EventHandler(this.btnAd_Click);
             // 
-            // button2
+            // btnAlt
             // 
-            this.button2.Location = new System.Drawing.Point(379, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Alterar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAlt.Location = new System.Drawing.Point(379, 112);
+            this.btnAlt.Name = "btnAlt";
+            this.btnAlt.Size = new System.Drawing.Size(75, 23);
+            this.btnAlt.TabIndex = 11;
+            this.btnAlt.Text = "Alterar";
+            this.btnAlt.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnEx
             // 
-            this.button4.Location = new System.Drawing.Point(379, 83);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Escluir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEx.Location = new System.Drawing.Point(379, 83);
+            this.btnEx.Name = "btnEx";
+            this.btnEx.Size = new System.Drawing.Size(75, 23);
+            this.btnEx.TabIndex = 13;
+            this.btnEx.Text = "Excluir";
+            this.btnEx.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 236);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEx);
+            this.Controls.Add(this.btnAlt);
+            this.Controls.Add(this.btnAd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -188,9 +189,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAd;
+        private System.Windows.Forms.Button btnAlt;
+        private System.Windows.Forms.Button btnEx;
     }
 }
 

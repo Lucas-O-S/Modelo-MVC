@@ -16,9 +16,10 @@ namespace MVCJogos.DAO
             SqlConnection conexao = ConexãoBD.GetConexao();
             try
             {
-                string valorLocacao = jogo.ToString().Replace(',', '.');
-                string sql = string.Format("set dateformat dwy; " +
-                    "insert into jogos(id, descricao, valor_locacao, data_aquisicao, categoriaID)  values ({0}, '{1}', {2},'{3}',{4})",
+                string valorLocacao = jogo.valorLocacao.ToString().Replace(',', '.');
+                string sql = string.Format("set dateformat dmy; " +
+                    "insert into jogos(id, descricao, valor_locacao, data_aquisicao, categoriaID)" +
+                    "  values ({0}, '{1}', {2},'{3}',{4}) ",
                     jogo.id, jogo.descricao, valorLocacao, jogo.dataAquicicao, jogo.idCategoria) ;
                 SqlCommand comando = new SqlCommand(sql, conexao);
                 comando.ExecuteNonQuery();
