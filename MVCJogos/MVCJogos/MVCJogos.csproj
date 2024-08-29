@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\ConexãoBD.cs" />
+    <Compile Include="DAO\HelperDAO.cs" />
     <Compile Include="DAO\JogoDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
