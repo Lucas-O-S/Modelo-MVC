@@ -11,22 +11,40 @@ namespace MVCJogos.DAO
 {
     internal class JogoDAO
     {
+
+        private SqlParameter[] CriarParametros(JogoViewModel jogo)
+        {
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0] = new SqlParameter("id", jogo.id);
+            parametros[1] = new SqlParameter("descricao", jogo.descricao);
+            parametros[2] = new SqlParameter("valor_locacao", jogo.valorLocacao);
+            parametros[3] = new SqlParameter("data_aquisicao", jogo.dataAquicicao);
+            parametros[4] = new SqlParameter("categoriaID", jogo.idCategoria);
+            return parametros;
+        }
         public void Inserir(JogoViewModel jogo)
         {
-            SqlConnection conexao = ConexãoBD.GetConexao();
-            try
-            {
-                string valorLocacao = jogo.valorLocacao.ToString().Replace(',', '.');
-                string sql = string.Format("set dateformat dmy; " +
-                    "insert into jogos(id, descricao, valor_locacao, data_aquisicao, categoriaID)" +
-                    "  values ({0}, '{1}', {2},'{3}',{4}) ",
-                    jogo.id, jogo.descricao, valorLocacao, jogo.dataAquicicao, jogo.idCategoria) ;
-                SqlCommand comando = new SqlCommand(sql, conexao);
-                comando.ExecuteNonQuery();
-            }
-            finally {
-                conexao.Close(); 
-            }
+            SqlConnection conexao = ConexaoBD.GetConexao();
+           
+                string sql = "insert into jogos(id, descricao, valor_locacao, data_aquisicao, categoriaID) " +
+                    "values (@id, @descricao, @valor_locacao, @data_aquisicao ,@categoriaID)";
+                HelperDAO.ExecutarSQL(sql, CriarParametros(jogo)); 
         }
+
+        public void Alterar(JogoViewModel jogo)
+        {
+            string sql= "update jogos set descricao=@descricao," +
+                "valor_locacao=@valor_locacao, data_aquisicao=@data_aquisicao," +
+                "categoriaID=@categoriaID where id = @id";
+            HelperDAO.ExecutarSQL(sql, CriarParametros(jogo));
+        }
+
+        public void Excluir(int id)
+        {
+            string sql = "delete jogos where id = " + id;
+            HelperDAO.ExecutarSQL(sql,null);
+        }
+
+
     }
 }

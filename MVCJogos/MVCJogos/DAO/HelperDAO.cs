@@ -11,15 +11,16 @@ namespace MVCJogos.DAO
     {
         public static void ExecutarSQL(string sql, SqlParameter[] parametros)
         {
-            using (SqlConnection conexao = ConexãoBD.GetConexao())
+            using (SqlConnection conexao = ConexaoBD.GetConexao())
             {
                 using(SqlCommand comando = new SqlCommand(sql, conexao))
                 {
                     if(parametros != null)
                     {
                         comando.Parameters.AddRange(parametros);
-                        comando.ExecuteNonQuery();
                     }
+                    comando.ExecuteNonQuery();
+
                 }
             }
 

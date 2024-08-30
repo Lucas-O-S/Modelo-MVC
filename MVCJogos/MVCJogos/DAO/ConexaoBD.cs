@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVCJogos.DAO
 {
-    public static class ConexãoBD
+    public static class ConexaoBD
     {
         public static SqlConnection GetConexao()
         {

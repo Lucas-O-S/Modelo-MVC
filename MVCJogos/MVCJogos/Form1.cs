@@ -24,7 +24,7 @@ namespace MVCJogos
 
         }
 
-        public void validacao(JogoViewModel jogo)
+        public void Validacao(JogoViewModel jogo)
         {
             if (jogo.id <= 0)
             {
@@ -58,7 +58,7 @@ namespace MVCJogos
             try
             {
                 JogoViewModel jogo = PreencherDados();
-                validacao(jogo);
+                Validacao(jogo);
                 JogoDAO jogoDAO = new JogoDAO();
                 jogoDAO.Inserir(jogo);
             }
@@ -79,7 +79,35 @@ namespace MVCJogos
             return jogo;
         }
 
+        private void btnEx_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JogoDAO dao = new JogoDAO();
+                dao.Excluir(Int32.Parse(boxId.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAlt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JogoViewModel jogo = PreencherDados();
+                Validacao(jogo);
+                JogoDAO dao = new JogoDAO();
+                dao.Alterar(jogo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
       
+        }
+
     }
 
 }

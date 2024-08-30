@@ -141,6 +141,7 @@
             this.btnAlt.TabIndex = 11;
             this.btnAlt.Text = "Alterar";
             this.btnAlt.UseVisualStyleBackColor = true;
+            this.btnAlt.Click += new System.EventHandler(this.btnAlt_Click);
             // 
             // btnEx
             // 
@@ -150,6 +151,7 @@
             this.btnEx.TabIndex = 13;
             this.btnEx.Text = "Excluir";
             this.btnEx.UseVisualStyleBackColor = true;
+            this.btnEx.Click += new System.EventHandler(this.btnEx_Click);
             // 
             // Form1
             // 
