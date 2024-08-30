@@ -1,6 +1,7 @@
 ﻿using MVCJogos.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,44 @@ namespace MVCJogos.DAO
             HelperDAO.ExecutarSQL(sql,null);
         }
 
+        public JogoViewModel Consulta(int id)
+        {
+            using (SqlConnection con = ConexaoBD.GetConexao())
+            {
+                string sql = "select * from jogos where id = " + id;
 
+                using (SqlDataAdapter adapter = new SqlDataAdapter(sql,con))
+                {
+                    DataTable tabela = new DataTable();
+                    adapter.Fill(tabela);
+                    if (tabela.Rows.Count == 0)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        DataRow registro = tabela.Rows[0];
+                        return MontarModel(registro);
+                    }
+                }
+            }
+         
+        }
+
+        public static JogoViewModel MontarModel(DataRow registro)
+        {
+            JogoViewModel jogo = new JogoViewModel();
+
+            jogo.id = Convert.ToInt32(registro["id"]);
+            jogo.descricao = Convert.ToString(registro["desc"]);
+
+            jogo.valorLocacao = Convert.ToDecimal(registro["valor_locacao"]);
+            jogo.dataAquicicao = Convert.ToDateTime(registro["data_aquisicao"]);
+
+            jogo.idCategoria = Convert.ToInt32(registro["categoriaID"]);
+
+            return jogo;
+
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace MVCJogos
             jogo.idCategoria = int.Parse(boxCat.Text);
             jogo.descricao = boxDesc.Text;
             jogo.dataAquicicao = DateTime.Parse(boxData.Text);
-            jogo.valorLocacao = float.Parse(boxValor.Text);
+            jogo.valorLocacao = decimal.Parse(boxValor.Text);
             return jogo;
         }
 

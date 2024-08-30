@@ -10,8 +10,11 @@ namespace MVCJogos.Model
     {
         public int id {  get; set; }
         public string descricao { get; set; }
-        public float valorLocacao {  get; set; }
+        public decimal valorLocacao {  get; set; }
         public DateTime dataAquicicao { get; set; }
         public int idCategoria { get; set; }
+
     }
+
+    
 }
