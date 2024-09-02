@@ -41,6 +41,9 @@
             this.btnAd = new System.Windows.Forms.Button();
             this.btnAlt = new System.Windows.Forms.Button();
             this.btnEx = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // boxId
@@ -153,11 +156,31 @@
             this.btnEx.UseVisualStyleBackColor = true;
             this.btnEx.Click += new System.EventHandler(this.btnEx_Click);
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(379, 141);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 14;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 218);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(442, 192);
+            this.dataGridView1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 236);
+            this.ClientSize = new System.Drawing.Size(502, 433);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnEx);
             this.Controls.Add(this.btnAlt);
             this.Controls.Add(this.btnAd);
@@ -174,6 +197,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +218,8 @@
         private System.Windows.Forms.Button btnAd;
         private System.Windows.Forms.Button btnAlt;
         private System.Windows.Forms.Button btnEx;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

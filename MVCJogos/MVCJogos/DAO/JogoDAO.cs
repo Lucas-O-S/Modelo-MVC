@@ -75,7 +75,7 @@ namespace MVCJogos.DAO
             JogoViewModel jogo = new JogoViewModel();
 
             jogo.id = Convert.ToInt32(registro["id"]);
-            jogo.descricao = Convert.ToString(registro["desc"]);
+            jogo.descricao = Convert.ToString(registro["descricao"]);
 
             jogo.valorLocacao = Convert.ToDecimal(registro["valor_locacao"]);
             jogo.dataAquicicao = Convert.ToDateTime(registro["data_aquisicao"]);

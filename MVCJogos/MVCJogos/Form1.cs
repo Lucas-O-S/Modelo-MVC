@@ -108,6 +108,39 @@ namespace MVCJogos
       
         }
 
+        private void PreencherTela(JogoViewModel jogo)
+        {
+            if (jogo != null)
+            {
+                boxId.Text = jogo.id.ToString();
+                boxValor.Text = jogo.valorLocacao.ToString();
+                boxDesc.Text = jogo.descricao.ToString();
+                boxCat.Text = jogo.idCategoria.ToString();
+                boxData.Text = jogo.dataAquicicao.ToString();
+
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JogoDAO dao = new JogoDAO();
+                JogoViewModel jogo = dao.Consulta(int.Parse(boxId.Text));
+                if (jogo != null)
+                {
+                    PreencherTela(jogo);
+                }
+                else
+                {
+                    MessageBox.Show("Registro não encontrado");
+                }
+            }
+            catch ( Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 
 }
