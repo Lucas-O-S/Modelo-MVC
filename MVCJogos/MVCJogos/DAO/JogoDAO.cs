@@ -52,20 +52,17 @@ namespace MVCJogos.DAO
             {
                 string sql = "select * from jogos where id = " + id;
 
-                using (SqlDataAdapter adapter = new SqlDataAdapter(sql,con))
-                {
-                    DataTable tabela = new DataTable();
-                    adapter.Fill(tabela);
+              
+                    DataTable tabela = HelperDAO.ExecutarSelect(sql,null);
                     if (tabela.Rows.Count == 0)
                     {
                         return null;
                     }
                     else
                     {
-                        DataRow registro = tabela.Rows[0];
-                        return MontarModel(registro);
+                        return MontarModel(tabela.Rows[0]);
                     }
-                }
+                
             }
          
         }
