@@ -66,6 +66,32 @@ namespace MVCJogos.DAO
             }
          
         }
+        public List<JogoViewModel> ConsultaTodos()
+        {
+            using (SqlConnection con = ConexaoBD.GetConexao())
+            {
+                string sql = "select * from jogos";
+
+
+                DataTable tabela = HelperDAO.ExecutarSelect(sql, null);
+                if (tabela.Rows.Count == 0)
+                {
+                    return null;
+                }
+                else
+                {
+                 
+                    List<JogoViewModel> jogos = new List<JogoViewModel>();
+                    for (int i = 0; i < tabela.Rows.Count; i++)
+                    {
+                        jogos.Add( MontarModel(tabela.Rows[i]) ); ;
+                    }
+                    return jogos;
+                }
+
+            }
+
+        }
 
         public static JogoViewModel MontarModel(DataRow registro)
         {

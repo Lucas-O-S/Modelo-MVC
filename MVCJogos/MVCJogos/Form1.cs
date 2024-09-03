@@ -141,6 +141,34 @@ namespace MVCJogos
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnTodos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JogoDAO dao = new JogoDAO();
+                List<JogoViewModel> jogos = dao.ConsultaTodos();
+                if (jogos != null)
+                {
+                    Grid.DataSource = jogos;
+                    Grid.Columns["id"].HeaderText = "Indice";
+                    Grid.Columns["descricao"].HeaderText = "Descrição";
+                    Grid.Columns["valorLocacao"].HeaderText = "Valor de Locação";
+                    Grid.Columns["dataAquicicao"].HeaderText = "Data de Aquicição";
+                    Grid.Columns["idCategoria"].HeaderText = "ID da Categoria";
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Registro não encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 
 }

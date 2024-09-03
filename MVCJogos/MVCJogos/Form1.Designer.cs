@@ -42,6 +42,9 @@
             this.btnAlt = new System.Windows.Forms.Button();
             this.btnEx = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.Grid = new System.Windows.Forms.DataGridView();
+            this.btnTodos = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // boxId
@@ -164,11 +167,31 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // Grid
+            // 
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(12, 206);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(442, 223);
+            this.Grid.TabIndex = 15;
+            // 
+            // btnTodos
+            // 
+            this.btnTodos.Location = new System.Drawing.Point(379, 170);
+            this.btnTodos.Name = "btnTodos";
+            this.btnTodos.Size = new System.Drawing.Size(75, 23);
+            this.btnTodos.TabIndex = 16;
+            this.btnTodos.Text = "Registros";
+            this.btnTodos.UseVisualStyleBackColor = true;
+            this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 229);
+            this.ClientSize = new System.Drawing.Size(502, 441);
+            this.Controls.Add(this.btnTodos);
+            this.Controls.Add(this.Grid);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnEx);
             this.Controls.Add(this.btnAlt);
@@ -186,6 +209,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +231,8 @@
         private System.Windows.Forms.Button btnAlt;
         private System.Windows.Forms.Button btnEx;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.Button btnTodos;
     }
 }
 
